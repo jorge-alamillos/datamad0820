@@ -17,7 +17,7 @@ import numpy as np
 
 #1. Calculate the square number of the first 20 numbers. Use square as the name of the list.
 # Remember to use list comprehensions and to print your results
-'''
+
 print("Ejercicio1 ------------------")
 square = [i**2 for i in range(20) ]
 print(square)
@@ -176,8 +176,6 @@ print("------------------")
 
 
 
-
-
 #14. Handle the exception thrown by the code below by using try and except blocks. 
 
 print("Ejercicio14------------------")
@@ -186,7 +184,8 @@ for i in ['a','b','c']:
     try:
         print(i**2)
     except:
-        raise TypeError((i,"no es una string por lo que no puede elevarse")
+        raise Exception((i,"no es una string por lo que no puede elevarse"))
+
 print("------------------")
 
 
@@ -258,33 +257,38 @@ try:
     f = open('testfile','r')
     f.write('Test write this')
 except:
-        raise exception: (TypeError(),"Fichero no encontrado")
+        raise Exception(TypeError(),"Fichero no encontrado")
 
 
 
 
 print("------------------")
+
 #19. Handle the exceptions that can be thrown by the code below using try and except blocks. 
 #Hint: the file could not exist and the data could not be convertable to int
 
-
+'''
 print("Ejercicio19------------------")
 
-try:
-    fp = open('myfile.txt')
-    line = f.readline()
-except:
-    if TypeError = FileNotFoundError:
-        print(TypeError("Fichero no encontrado") 
+def fichero():
+    try:
+        fp = open('myfile.txt')
+        line = f.readline()
+    except:
+        if TypeError is FileNotFoundError:
+            print(TypeError("Fichero no encontrado") 
+            
 
-try:
-    i = "oata"
-    i = int(s.strip())
-except:
-    raise TypeError()
+def tipo():
+    try:
+        i = int(s.strip())
+    except:
+        if TypeError is TypeError:
+            print(TypeError("Fichero no encontrado")
+        raise TypeError()
 
 print("------------------")   
-
+'''
 #20. The following function can only run on a Linux system. 
 # The assert in this function will throw an exception if you call it on an operating system other than Linux. 
 # Handle this exception using try and except blocks. 
@@ -301,7 +305,7 @@ def linux_interaction():
 
 print(linux_interaction())
 print("------------------")
-'''
+
 # Bonus Questions:
 
 # You will need to make some research on dictionary comprehension to solve the following questions
@@ -311,21 +315,53 @@ print("------------------")
 # Use a while loop with a try,except, else block to account for incorrect inputs.
 
 
+print("Ejercicio21------------------")       
+def cuadrado():
+    while True:
+        try:
+            numero = int(input("Introduce un número entero,porfa\n"))
+        except ValueError:
+            print("Tío, eso no es un número")
+            continue
+        else:
+            break
+    return numero**2
+    
 
+print(cuadrado())
+print("------------------")
 
 # 22. Find all of the numbers from 1-1000 that are divisible by any single digit besides 1 (2-9). 
 # Use results as the name of the list 
+print("Ejercicio22------------------")  
+def results():
+   return set([i for i in range(1,1001) for r in range(2,9) if i % r == 0])
+    
+print(results())
 
-
-
+print("------------------")
 
 # 23. Define a customised exception to handle not accepted values. 
 # You have the following user inputs and the Num_of_sections can not be less than 2.
 # Hint: Create a class derived from the pre-defined Exception class in Python
+'''
+class ThisIsNotIntegerError:
+    print("Esto no es un número")
 
-Total_Marks = int(input("Enter Total Marks Scored: ")) 
+
+    def cuadrado():
+        while True:
+            try:
+                Total_Marks = int(input("Enter Total Marks Scored: "))
+            except:
+                raise ThisIsNotIntegerError
+                continue
+            else:
+                break
+        return Total_Marks
+ 
+
+print(cuadrado()) 
+
 Num_of_Sections = int(input("Enter Num of Sections: "))
-
-
-
 '''
