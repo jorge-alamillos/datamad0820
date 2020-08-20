@@ -12,6 +12,7 @@ print("Enunciado--------------------")
 import math
 import os
 import random
+import numpy as np
 
 
 #1. Calculate the square number of the first 20 numbers. Use square as the name of the list.
@@ -127,18 +128,19 @@ print(files)
 
 print("------------------")
 
-'''
+
 #11. Create 4 lists of 10 random numbers between 0 and 100 each. Use random_lists as the name of the list. 
 #You will probably need to import random module
 # Remember to use list comprehensions and to print your results
 
-print("Ejercicio10------------------")
+print("Ejercicio11------------------")
 
-files  = os.listdir()
-print(files)
+def random_lists():
+    return [random.sample(range(100), 10) for i in range(4)]
+    
+print(random_lists())
 
 print("------------------")
-
 
 
 #12. Flatten the following list of lists. Use flatten_list as the name of the output.
@@ -146,6 +148,14 @@ print("------------------")
 
 list_of_lists = [[1,2,3],[4,5,6],[7,8,9]]
 
+print("Ejercicio12------------------")
+
+def flatten_list(x):
+    return [z for i in x for z in i]
+
+print(flatten_list(list_of_lists))
+
+print("------------------")
 
 
 #13. Convert the numbers of the following nested list to floats. Use floats as the name of the list. 
@@ -155,71 +165,143 @@ list_of_lists = [['40', '20', '10', '30'], ['20', '20', '20', '20', '20', '30', 
 ['30', '20', '30', '50', '10', '30', '20', '20', '20'], ['100', '100'], ['100', '100', '100', '100', '100'], \
 ['100', '100', '100', '100']]
 
+print("Ejercicio13------------------")
 
-'''
+def floats(x):
+    return [float(z) for i in x for z in i]
+
+print(floats(list_of_lists))
+
+print("------------------")
+
+
+
+
 
 #14. Handle the exception thrown by the code below by using try and except blocks. 
 
+print("Ejercicio14------------------")
 
 for i in ['a','b','c']:
-    print(i**2)
+    try:
+        print(i**2)
+    except:
+        raise TypeError((i,"no es una string por lo que no puede elevarse")
+print("------------------")
 
 
 #15. Handle the exception thrown by the code below by using try and except blocks. 
 #Then use a finally block to print 'All Done.'
 # Check in provided resources the type of error you may use. 
 
+print("Ejercicio15------------------")
+
 x = 5
 y = 0
 
-z = x/y
+try:
+    z = x/y
+except:
+    print(('no es posible dividir un numero entre 0'))
 
-
-
+finally:
+    print("All Done")
+print("------------------")
+ 
 
 #16. Handle the exception thrown by the code below by using try and except blocks. 
 # Check in provided resources the type of error you may use. 
-
+print("Ejercicio16------------------")
 abc=[10,20,20]
-print(abc[3])
-
+try:
+    print(abc[3])
+except:
+    raise TypeError("Argumento fuera del rango de la lista")
+print("------------------")
 
 #17. Handle at least two kind of different exceptions when dividing a couple of numbers provided by the user. 
 # Hint: take a look on python input function. 
 # Check in provided resources the type of error you may use. 
 
+print("Ejercicio17------------------")
 
+numarator = input("Please, enter the numerator\n:")
+denominator = input("Please, enter the denominator\n:")
+
+def divide(a,b):
+    if type(a) != int or type(a) != float:
+        try:
+            a = float(a)
+        except:
+            raise TypeError(f"a no es compatible, debe ser un entero o float y es del tipo {type(a)}")
+    if type(b) != int or type(b) != float:
+        try:
+            b = float(b)
+        except:
+            raise TypeError(f"b no es compatible, debe ser un entero o float y es del tipo {type(b)}")
+    if b == 0:
+        raise ZeroDivisionError("b no puede ser 0")
+        
+    return a / b
+    
+       
+print(divide(numarator,denominator))
+
+print("------------------")
 
 
 #18. Handle the exception thrown by the code below by using try and except blocks. 
 # Check in provided resources the type of error you may use. 
+print("Ejercicio18------------------")
 
-f = open('testfile','r')
-f.write('Test write this')
+try:
+    f = open('testfile','r')
+    f.write('Test write this')
+except:
+        raise exception: (TypeError(),"Fichero no encontrado")
 
 
 
 
+print("------------------")
 #19. Handle the exceptions that can be thrown by the code below using try and except blocks. 
 #Hint: the file could not exist and the data could not be convertable to int
 
-fp = open('myfile.txt')
+
+print("Ejercicio19------------------")
+
+try:
+    fp = open('myfile.txt')
     line = f.readline()
+except:
+    if TypeError = FileNotFoundError:
+        print(TypeError("Fichero no encontrado") 
+
+try:
+    i = "oata"
     i = int(s.strip())
+except:
+    raise TypeError()
 
-
-
+print("------------------")   
 
 #20. The following function can only run on a Linux system. 
 # The assert in this function will throw an exception if you call it on an operating system other than Linux. 
 # Handle this exception using try and except blocks. 
 # You will probably need to import sys 
 
+print("Ejercicio20------------------")
 def linux_interaction():
-    assert ('linux' in sys.platform), "Function can only run on Linux systems."
-    print('Doing something.')
+    try:
+        assert ('linux' in sys.platform), "Function can only run on Linux systems."
+    except:
+        return "You are using MAC OS!"
+    finally:
+        return('Doing something.')
 
-
+print(linux_interaction())
+print("------------------")
+'''
 # Bonus Questions:
 
 # You will need to make some research on dictionary comprehension to solve the following questions
