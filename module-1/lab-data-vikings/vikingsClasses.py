@@ -1,4 +1,6 @@
 
+import random
+
 # Soldier
 class Soldier:
 
@@ -51,48 +53,34 @@ class War:
     def __init__(self):
          self.vikingArmy = []
          self.saxonArmy = []
-    
 
-def addViking(Viking):
-    vikingArmy.append(Viking)
+    def addViking(self,Viking):
+        self.vikingArmy.append(Viking)
 
+    def addSaxon(self, Saxon):
+        self.saxonArmy.append(Saxon)
 
-def addSaxon(Saxon):
-    saxonArmy.append(Saxon)
+    def vikingAttack(self):
+        chosenSaxon = random.choice(self.saxonArmy)
+        chosenViking = random.choice(self.vikingArmy)
+        damage = chosenSaxon.receiveDamage(chosenViking.strenght)
+        if chosenViking.self.health <= 0:
+            self.vikingArmy.remove(chosenSaxon)     
+        return damage
+    def saxonAttack(self):
+        chosenViking = random.choice(self.vikingArmy)
+        chosenSaxon = random.choice(self.saxonArmy)
+        damage = chosenViking.receiveDamage(chosenSaxon.strenght)
+        if chosenSaxon.self.health <= 0:
+            self.saxonArmy.remove(chosenViking)
+        return damage
+        
 
+    def showStatus(self):
+        if len(self.saxonArmy) == 0:
+            return "Vikings have won the war of the century!"
+        elif len(self.vikingArmy) == 0:
+            return "Saxons have fought for their lives and survive another day..."
+        elif len(self.saxonArmy) > 0 and len(self.vikingArmy) > 0:
+            return "Vikings and Saxons are still in the thick of battle."
 
-def vikingAttack(self):
-    Saxon.receiveDamage = Viking.strenght
-    saxonArmy -= 1
-    return Saxon.receiveDamage, Saxon.strenght
-
-def saxonAttack():
-    Viking.receiveDamage = Saxon.strenght
-    saxonArmy -= 1
-    return Viking.receiveDamage, Viking.strenght
-
-def showStatus():
-    if len(saxonArmy) == 0:
-        return "Vikings have won the war of the century!"
-    elif len(vikingArmy) == 0:
-        return "Saxons have fought for their lives and survive another day..."
-    elif len(SanxonArmy) > 0 and len(vikingArmy) > 0:
-        return "Vikings and Saxons are still in the thick of battle."
-
-
-
-
-# class Viking:
-#     pass
-
-# # Saxon
-
-
-# class Saxon:
-#     pass
-
-# # War
-
-
-# class War:
-#     pass
