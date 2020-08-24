@@ -72,6 +72,7 @@ print("mean",d_mean)
 
 f = np.empty((2,3,5))
 print("matrix f", f)
+
 '''
 #16. Populate the values in f. For each value in d, if it's larger than d_min but smaller than d_mean, assign 25 to the corresponding value in f.
 If a value in d is larger than d_mean but smaller than d_max, assign 75 to the corresponding value in f.
@@ -81,21 +82,25 @@ Assign 100 to the corresponding value(s) in f for d_max in d.
 In the end, f should have only the following values: 0, 25, 50, 75, and 100.
 Note: you don't have to use Numpy in this question.
 '''
-for i in d:
-        if d_mean < i < d_max:
-                f[index(i)] = 75
-        
-
+def clasificacion(i):                      
+        if  d_mean < i < d_max:
+                return 75
         elif i == d_mean:
-                f[index(i)] = 50
-
+                return 50
         elif i == d_min:
-                f[index(i)] = 0
+                return 0
         elif i == d_max:
-                f[index(i)] = 100
+                return 100
+        elif d_min < i < d_mean:
+                return 25
 
-
-
+for x in range(d.shape[0]):
+        for y in range(d.shape[1]):
+                for z in range(d.shape[2]):
+                        f[x,y,z] = clasificacion(d[x,y,z])
+            
+   
+print(f)
 
 """
 #17. Print d and f. Do you have your expected f?
@@ -117,6 +122,12 @@ array([[[ 75.,  75.,  75.,  25.,  75.],
         [ 75.,  75.,  75.,  75.,  75.],
         [ 25.,  75.,   0.,  75.,  75.]]])
 """
+print("MATRIX d", d)
+print("MATRIX f", f)
+
+
+
+
 
 
 """
@@ -131,3 +142,33 @@ array([[[ 'D',  'D',  'D',  'B',  'D'],
         [ 'B',  'D',   'A',  'D', 'D']]])
 Again, you don't need Numpy in this question.
 """
+d = d.tolist()
+print(d)
+def lista_plana(d):
+        for x in range(d):
+                for y in range(x):
+                        for z in range(y):
+                                return z
+
+
+g = lista_plana(d)
+print(g)
+
+'''
+print("D0--->",d[0])
+def clasificacion(i):                      
+        if  d_mean < i < d_max:
+                return "D"
+        elif i == d_mean:
+                return "C"
+        elif i == d_min:
+                return "A"
+        elif i == d_max:
+                return "E"
+        elif d_min < i < d_mean:
+                return "B"
+
+for x in range(d[0]):
+        for y in range(d[1]):
+                        f[x,y] = clasificacion(d[x,y])
+'''            
