@@ -142,17 +142,7 @@ array([[[ 'D',  'D',  'D',  'B',  'D'],
         [ 'B',  'D',   'A',  'D', 'D']]])
 Again, you don't need Numpy in this question.
 """
-d = d.tolist()
-print(d)
-def lista_plana(d):
-        for x in range(d):
-                for y in range(x):
-                        for z in range(y):
-                                return z
 
-
-g = lista_plana(d)
-print(g)
 
 '''
 print("D0--->",d[0])
