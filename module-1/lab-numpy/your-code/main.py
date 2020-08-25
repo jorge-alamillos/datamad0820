@@ -143,8 +143,24 @@ array([[[ 'D',  'D',  'D',  'B',  'D'],
 Again, you don't need Numpy in this question.
 """
 
+def bonus(d):
+        for i in np.nditer(d):
+                if  d_mean < i < d_max:
+                        return "D"
+                elif i == d_mean:
+                        return "C"
+                elif i == d_min:
+                        return "A"
+                elif i == d_max:
+                        return "E"
+                elif d_min < i < d_mean:
+                        return "B"
+
+print(bonus(d))
+
 
 '''
+
 print("D0--->",d[0])
 def clasificacion(i):                      
         if  d_mean < i < d_max:
