@@ -17,14 +17,14 @@ INSERT INTO "Invoice" ("ID","Invoice", "Number", "Date", "Car", "Customer", "Sal
 INSERT INTO "Invoice" ("ID","Invoice", "Number", "Date", "Car", "Customer", "Sales Person") VALUES ("2", "271135104", "22-01-2019", "2", "2", "7");
 
 
-VALUES INSERT INTO "Salesperson" ("ID", "Staff ID", "Name", "Store") VALUES ("0", "00001", "Petey Cruiser", "Madrid");
-VALUES INSERT INTO "Salesperson" ("ID", "Staff ID", "Name", "Store") VALUES ("1", "00002", "Anna Sthesia", "Barcelona");
-VALUES INSERT INTO "Salesperson" ("ID", "Staff ID", "Name", "Store") VALUES ("2", "00003", "Paul Molive", "Berlin");
-VALUES INSERT INTO "Salesperson" ("ID", "Staff ID", "Name", "Store") VALUES ("3", "00004", "Gail Forcewind", "Paris");
-VALUES INSERT INTO "Salesperson" ("ID", "Staff ID", "Name", "Store") VALUES ("4", "00005", "Paige Turner", "Mimia");
-VALUES INSERT INTO "Salesperson" ("ID", "Staff ID", "Name", "Store") VALUES ("5", "00006", "Bob Frapples", "Mexico City")
-VALUES INSERT INTO "Salesperson" ("ID", "Staff ID", "Name", "Store") VALUES ("6", "00007", "Walter Melon", "Amsterdam");
-VALUES INSERT INTO "Salesperson" ("ID", "Staff ID", "Name", "Store") VALUES ("7", "00008", "Shonda Leer", "São Paulo");
+INSERT INTO "Salesperson" ("ID", "Staff ID", "Name", "Store") VALUES ("0", "00001", "Petey Cruiser", "Madrid");
+INSERT INTO "Salesperson" ("ID", "Staff ID", "Name", "Store") VALUES ("1", "00002", "Anna Sthesia", "Barcelona");
+INSERT INTO "Salesperson" ("ID", "Staff ID", "Name", "Store") VALUES ("2", "00003", "Paul Molive", "Berlin");
+INSERT INTO "Salesperson" ("ID", "Staff ID", "Name", "Store") VALUES ("3", "00004", "Gail Forcewind", "Paris");
+INSERT INTO "Salesperson" ("ID", "Staff ID", "Name", "Store") VALUES ("4", "00005", "Paige Turner", "Mimia");
+INSERT INTO "Salesperson" ("ID", "Staff ID", "Name", "Store") VALUES ("5", "00006", "Bob Frapples", "Mexico City")
+INSERT INTO "Salesperson" ("ID", "Staff ID", "Name", "Store") VALUES ("6", "00007", "Walter Melon", "Amsterdam");
+INSERT INTO "Salesperson" ("ID", "Staff ID", "Name", "Store") VALUES ("7", "00008", "Shonda Leer", "São Paulo");
 
 
 
